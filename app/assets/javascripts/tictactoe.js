@@ -17,7 +17,11 @@ function updateState(square) {
 }
 
 function setMessage(text) {
+<<<<<<< HEAD
   $("#message").html(text)
+=======
+  $("message").innerHTML(text)
+>>>>>>> 74a7cc73ae5c512624795150cd8b4a64691093de
 }
 
 function checkWinner(state, turn) {
