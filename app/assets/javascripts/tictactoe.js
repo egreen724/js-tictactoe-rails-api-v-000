@@ -12,12 +12,12 @@ function player(turn) {
 
 function updateState(square) {
   if (turn <= 10) {
-    $(square).innerHTML(player(turn))
+    $(square).HTML(player(turn))
   }
 }
 
 function setMessage(text) {
-  $(#message).innerHTML(text)
+  $("#message").html(text)
 }
 
 function checkWinner(state, turn) {
