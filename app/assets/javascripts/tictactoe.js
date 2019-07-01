@@ -7,7 +7,7 @@ const winCombinations = [
     ]
 
 function player(turn) {
-  if (turn % 2 =! 0) {
+  if (turn % 2 !== 0) {
     return 'O'
   } else {
     return 'X'
@@ -15,9 +15,7 @@ function player(turn) {
 }
 
 function updateState(square) {
-  if (turn <= 10) {
-    $(square).HTML(player(turn))
-  }
+    $(square).html(player(turn))
 }
 
 function setMessage(text) {
@@ -40,6 +38,7 @@ function checkWinner() {
 
   winCombinations.some(function(combo) {
     if (board[combo[0]] !== "" && board[combo[0]] === board[combo[1]] && board[combo[1]] === board[combo[2]]) {
+      debugger; 
       setMessage(`Player ${player(turn)} Won!`);
       return winner = true;
     }
@@ -60,8 +59,8 @@ function doTurn(element) {
   updateState(element);
 
   if (checkWinner()) {
-    saveGame()
-    resetBoard()
+    saveGame();
+    resetBoard();
   } else if (turn === 9) {
     setMessage("Tie Game.");
     saveGame()
